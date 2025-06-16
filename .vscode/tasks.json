@@ -1,0 +1,248 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-DolarService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/DolarService/DolarService.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build-TemperaturaService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/TemperaturaService/TemperaturaService.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build-GatewayService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/GatewayService/GatewayService.csproj",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      }
+    },
+    {
+      "label": "build-all",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "build",
+        "${workspaceFolder}/MicroserviciosSolution.sln",
+        "/property:GenerateFullPaths=true",
+        "/consoleloggerparameters:NoSummary"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "clean-all",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "clean",
+        "${workspaceFolder}/MicroserviciosSolution.sln"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "restore-all",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "restore",
+        "${workspaceFolder}/MicroserviciosSolution.sln"
+      ],
+      "problemMatcher": "$msCompile",
+      "group": "build"
+    },
+    {
+      "label": "watch-DolarService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/DolarService/DolarService.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "watch-TemperaturaService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/TemperaturaService/TemperaturaService.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "watch-GatewayService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "watch",
+        "run",
+        "--project",
+        "${workspaceFolder}/GatewayService/GatewayService.csproj"
+      ],
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "run-all-services",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "run-DolarService",
+        "run-TemperaturaService",
+        "run-GatewayService"
+      ],
+      "group": "build"
+    },
+    {
+      "label": "run-DolarService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/DolarService/DolarService.csproj"
+      ],
+      "options": {
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "http://localhost:5104"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "run-TemperaturaService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/TemperaturaService/TemperaturaService.csproj"
+      ],
+      "options": {
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "http://localhost:5050"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    },
+    {
+      "label": "run-GatewayService",
+      "command": "dotnet",
+      "type": "process",
+      "args": [
+        "run",
+        "--project",
+        "${workspaceFolder}/GatewayService/GatewayService.csproj"
+      ],
+      "options": {
+        "env": {
+          "ASPNETCORE_ENVIRONMENT": "Development",
+          "ASPNETCORE_URLS": "http://localhost:5071"
+        }
+      },
+      "problemMatcher": "$msCompile",
+      "isBackground": true,
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "new",
+        "showReuseMessage": true,
+        "clear": false
+      }
+    }
+  ]
+}

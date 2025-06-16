@@ -1,0 +1,159 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "DolarService (HTTP)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-DolarService",
+      "program": "${workspaceFolder}/DolarService/bin/Debug/net9.0/DolarService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/DolarService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5104"
+      },
+      "launchBrowser": {
+        "enabled": true,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      }
+    },
+    {
+      "name": "TemperaturaService (HTTP)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-TemperaturaService",
+      "program": "${workspaceFolder}/TemperaturaService/bin/Debug/net9.0/TemperaturaService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/TemperaturaService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5050"
+      }
+    },
+    {
+      "name": "GatewayService (HTTP)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-GatewayService",
+      "program": "${workspaceFolder}/GatewayService/bin/Debug/net9.0/GatewayService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/GatewayService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5071"
+      },
+      "launchBrowser": {
+        "enabled": true,
+        "args": "${auto-detect-url}",
+        "windows": {
+          "command": "cmd.exe",
+          "args": "/C start ${auto-detect-url}"
+        },
+        "osx": {
+          "command": "open"
+        },
+        "linux": {
+          "command": "xdg-open"
+        }
+      }
+    },
+    {
+      "name": "DolarService (HTTPS)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-DolarService",
+      "program": "${workspaceFolder}/DolarService/bin/Debug/net9.0/DolarService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/DolarService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7214;http://localhost:5104"
+      }
+    },
+    {
+      "name": "TemperaturaService (HTTPS)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-TemperaturaService",
+      "program": "${workspaceFolder}/TemperaturaService/bin/Debug/net9.0/TemperaturaService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/TemperaturaService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7241;http://localhost:5050"
+      }
+    },
+    {
+      "name": "GatewayService (HTTPS)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-GatewayService",
+      "program": "${workspaceFolder}/GatewayService/bin/Debug/net9.0/GatewayService.dll",
+      "args": [],
+      "cwd": "${workspaceFolder}/GatewayService",
+      "console": "internalConsole",
+      "stopAtEntry": false,
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "https://localhost:7189;http://localhost:5071"
+      }
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Microservicios Completos (HTTP)",
+      "configurations": [
+        "DolarService (HTTP)",
+        "TemperaturaService (HTTP)", 
+        "GatewayService (HTTP)"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "Microservicios Completos (HTTPS)",
+      "configurations": [
+        "DolarService (HTTPS)",
+        "TemperaturaService (HTTPS)",
+        "GatewayService (HTTPS)"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "Solo Servicios Backend (HTTP)",
+      "configurations": [
+        "DolarService (HTTP)",
+        "TemperaturaService (HTTP)"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "Solo Servicios Backend (HTTPS)",
+      "configurations": [
+        "DolarService (HTTPS)",
+        "TemperaturaService (HTTPS)"
+      ],
+      "stopAll": true
+    }
+  ]
+}

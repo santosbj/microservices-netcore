@@ -1,0 +1,16 @@
+{
+  "dotnet.defaultSolution": "MicroserviciosSolution.sln",
+  "omnisharp.enableEditorConfigSupport": true,
+  "omnisharp.enableRoslynAnalyzers": true,
+  "csharp.semanticHighlighting.enabled": true,
+  "csharp.format.enable": true,
+  "files.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "search.exclude": {
+    "**/bin": true,
+    "**/obj": true
+  },
+  "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true
+}
