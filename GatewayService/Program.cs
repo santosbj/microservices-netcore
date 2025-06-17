@@ -89,7 +89,6 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 // Registrar servicios
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<IJwtService, JwtService>();
-builder.Services.AddScoped<IHttpService, HttpService>();
 builder.Services.AddScoped<IMicroservicesService, MicroservicesService>();
 
 var app = builder.Build();

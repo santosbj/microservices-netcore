@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DolarService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a42a16e9d064d632b1ce70307c9014955b989397")]
 [assembly: System.Reflection.AssemblyProductAttribute("DolarService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DolarService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
